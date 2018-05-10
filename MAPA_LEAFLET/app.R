@@ -50,17 +50,18 @@ server <- shinyServer(function(input,output,session) {
   
   observe({
     paleta_colores <- colorBin('RdYlGn', votos_candidato()$PORCENTAJE_VOTOS, 4)
-    etiqueta <- paste0('<strong>Provincia: </strong>',
+    clic <- paste0('<strong>Provincia: </strong>',
                        votos_candidato()$PROVINCIA_NOMBRE,
                        '<br><strong>Votos: </strong>',
                        votos_candidato()$VOTOS,
                        '<br><strong>Porcentaje: </strong>',
                        votos_candidato()$PORCENTAJE_VOTOS)
-    
+    over <- votos_candidato()$PROVINCIA_NOMBRE
     leafletProxy('mapa', data = votos_candidato()) %>%
       addPolygons(data = shppro,
                   layerId = shppro$CODPRO,
-                  popup = etiqueta,
+                  popup = clic,
+                  label = over,
                   fillOpacity = 0.5,
                   fillColor = paleta_colores(votos_candidato()$PORCENTAJE_VOTOS),
                   color='#000000',
