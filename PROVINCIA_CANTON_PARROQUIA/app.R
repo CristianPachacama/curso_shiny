@@ -2,14 +2,14 @@
 
 dpa <- readRDS("dpa.rds")
 
-prov <- unique(dpa$PROVINCIA_NOMBRE)
+provincias <- unique(dpa$PROVINCIA_NOMBRE)
 
 
 ui <- fluidPage(
   
   selectInput('pro',
               h4("Provincia"),
-              choices=prov
+              choices=provincias
   ),
   
   selectInput('can',
