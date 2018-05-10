@@ -1,0 +1,83 @@
+.centro { 
+  text-align: center;
+} 
+
+.login { 
+  text-align: left;
+  margin: auto;
+  width: 250px;
+} 
+
+#Password {
+  -webkit-text-security: disc;
+}
+
+body {
+  margin:0.1cm;
+}
+
+.shiny-output-error {
+  visibility: hidden;
+}
+
+#loadmessage {
+	padding: 5px 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 100%;
+	color: #000000;
+	background-color: #fcf680;
+	z-index: 100;
+}
+
+#limpiar {
+	background-color:#000000;
+	color:#FFFFFF;
+}
+
+#Login {
+	background-color:#000000;
+	color:#FFFFFF;
+}
+
+h2 {
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+}
+
+h3 {
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+}
+
+h4 {
+	color: #000000;
+	font-weight: bold;
+}
+
+h5 {
+	color: #000000;
+	font-weight: bold;
+	text-align: left;
+}
+
+h6 {
+	color: #046836;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #adadad;
+  font-size: 90%;
+  text-align: center;
+}
+
+.table-bordered > tbody > tr > th {
+  color: #000000;
+}
