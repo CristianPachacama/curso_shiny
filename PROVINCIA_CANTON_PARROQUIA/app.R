@@ -1,8 +1,8 @@
 # Ejemplo menú anidado
 
-parroquias <- readRDS("parroquias.rds")
+dpa <- readRDS("dpa.rds")
 
-prov <- unique(parroquias$PROVINCIA_NOMBRE)
+prov <- unique(dpa$PROVINCIA_NOMBRE)
 
 
 ui <- fluidPage(
@@ -27,13 +27,13 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
   observe({
-    cantones <- parroquias$CANTON_NOMBRE[parroquias$PROVINCIA_NOMBRE==input$pro]
+    cantones <- dpa$CANTON_NOMBRE[dpa$PROVINCIA_NOMBRE==input$pro]
     updateSelectInput(session, "can",
                       choices = cantones)
   })
   
   observe({
-    parroquias <- parroquias$PARROQUIA_NOMBRE[parroquias$CANTON_NOMBRE==input$can]
+    parroquias <- dpa$PARROQUIA_NOMBRE[dpa$CANTON_NOMBRE==input$can]
     updateSelectInput(session, "par",
                       choices = parroquias)
   })
